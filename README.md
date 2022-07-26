@@ -4,6 +4,8 @@
 This is used to encrypt, decrypt, sign xml and verify xml.
 
 ## Usage
+
+```
 usage: security.sh
  -d,--decrypt            Decrypt the input file
  -e,--encrypt            Encrypt the input file
@@ -12,7 +14,7 @@ usage: security.sh
  -o,--outputFile <arg>   Output File
  -s,--sign               Sign the XML File
  -v,--verify             Verify the signature of XML File
-
+```
  ## To Do
  1. Key management must be configurable
  2.JKS store must be more friendly
