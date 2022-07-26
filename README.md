@@ -1,5 +1,7 @@
 # paycorp-security
 
+[![CodeQL](https://github.com/prashantevolvus/paycorp-security/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/prashantevolvus/paycorp-security/actions/workflows/codeql-analysis.yml)
+
 ## Introduction
 This is used to encrypt, decrypt, sign xml and verify xml.
 
