@@ -1,7 +1,4 @@
-.DS_Store
-*.txt
-*.jar
-*.xml
+publish/
 keys/
-*.zip
+junk/
 target/
