@@ -17,4 +17,4 @@ usage: security.sh
 ```
  ## To Do
  1. Key management must be configurable
- 2.JKS store must be more friendly
+ 2. JKS store must be more friendly
