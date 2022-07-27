@@ -143,19 +143,4 @@ public class XMLSignVerify {
 
   }
 
-  public static void main(String[] args) {
-    try {
-
-      String hexString = "b5ff6db1e2f1d27d294047b220516312da1b4ba899035692e893e16815fc9784";
-      String content = Files.readString(Paths.get("ENC.XML"), StandardCharsets.UTF_8);
-      Encryption enc = new Encryption();
-      XMLSignVerify svXML = new XMLSignVerify();
-      String plain = enc.decrypt(content, hexString);
-      System.out.println(plain);
-      svXML.verifyXML(plain);
-    } catch (Exception e) {
-      LOGGER.error("Exception raise ", e);
-    }
-  }
-
 }
