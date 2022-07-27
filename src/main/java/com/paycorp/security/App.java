@@ -34,6 +34,7 @@ public class App {
         Operation oper;
         String inputFile;
         String outputFile;
+        // TODO:Need to remove hardcoded values
         String key = "b5ff6db1e2f1d27d294047b220516312da1b4ba899035692e893e16815fc9784";
 
         private static final Encryption enc = new Encryption();
