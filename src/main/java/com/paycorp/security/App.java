@@ -108,6 +108,7 @@ public class App {
     public static Handler parseArgument(String[] args) {
 
         Options options = new Options();
+        
 
         try {
 
@@ -231,6 +232,7 @@ public class App {
     private static void printDefault(String message, Options options) {
         LOGGER.info(message);
         HelpFormatter formatter = new HelpFormatter();
+        formatter.setOptionComparator(null);
         formatter.printHelp("security.sh", options);
     }
 
