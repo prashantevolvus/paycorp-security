@@ -17,6 +17,8 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
 public class App {
+    private static final String SHELL_TO_RUN = "security.sh";
+    private static final String ENV_TWADKEY = "TWADKEY";
     private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
 
     private static class Handler {
@@ -34,8 +36,8 @@ public class App {
         Operation oper;
         String inputFile;
         String outputFile;
-        // TODO:Need to remove hardcoded values
-        String key = "b5ff6db1e2f1d27d294047b220516312da1b4ba899035692e893e16815fc9784";
+
+        static String key = System.getenv(ENV_TWADKEY);
 
         private static final Encryption enc = new Encryption();
         private static final XMLSignVerify svXML = new XMLSignVerify();
@@ -95,10 +97,10 @@ public class App {
 
     public static void main(String[] args) {
         LOGGER.info("WELCOME TO PAYCORP DIGITAL SIGNING MODULE");
+
         try {
             Handler handler = parseArgument(args);
             handler.execute();
-
         } catch (Exception e) {
             LOGGER.error("Exception raised ", e);
         }
@@ -108,7 +110,6 @@ public class App {
     public static Handler parseArgument(String[] args) {
 
         Options options = new Options();
-        
 
         try {
 
@@ -226,14 +227,14 @@ public class App {
         LOGGER.info(message);
         LOGGER.info(pe.getMessage());
         HelpFormatter formatter = new HelpFormatter();
-        formatter.printHelp("security.sh", options);
+        formatter.printHelp(SHELL_TO_RUN, options);
     }
 
     private static void printDefault(String message, Options options) {
         LOGGER.info(message);
         HelpFormatter formatter = new HelpFormatter();
         formatter.setOptionComparator(null);
-        formatter.printHelp("security.sh", options);
+        formatter.printHelp(SHELL_TO_RUN, options);
     }
 
 }

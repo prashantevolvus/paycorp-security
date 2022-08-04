@@ -50,21 +50,4 @@ public class Encryption {
     return new String(cipher.doFinal(arrEnc));
   }
 
-  // public static void main( String[] args ){
-  // try{
-  // String hexString =
-  // "b5ff6db1e2f1d27d294047b220516312da1b4ba899035692e893e16815fc9784";
-  //
-  // String content = Files.readString(Paths.get(args[0]),
-  // StandardCharsets.UTF_8);
-  // String y = Encryption.encrypt(content,hexString);
-  // System.out.println(y);
-  //
-  //
-  // } catch(Exception e) {
-  // e.printStackTrace();
-  // }
-  //
-  //
-  // }
 }

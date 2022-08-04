@@ -41,16 +41,18 @@ public class XMLSignVerify {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(XMLSignVerify.class);
 
-  private static final String KEYSTORE_FILE = "keys/indianbank.jks";
-  private static final String KEYSTORE_PASS = "serbia";
-  private static final String BANK_KEYSTORE_ALIAS = "54eb870d9ad14386a54e3743ccadd88a";
-  private static final String CLIENT_KEYSTORE_ALIAS = "TNWBD";
+  private static final String ENV_KS_FILE = "KS_FILE";
+  private static final String ENV_KS_PASS = "KS_PASS";
+  private static final String ENV_KS_ALIAS = "KS_ALIAS";
+  private static final String ENV_KS_CLIENT_ALIAS = "KS_CLIENT_ALIAS";
 
-  public enum Operation {
-    SIGNXML,
-    VERIFYXML,
-    NO_OPERATION
-  }
+
+  private static final String KEYSTORE_FILE = System.getenv(ENV_KS_FILE);
+  private static final String KEYSTORE_PASS = System.getenv(ENV_KS_PASS);
+  private static final String BANK_KEYSTORE_ALIAS = System.getenv(ENV_KS_ALIAS);
+  private static final String CLIENT_KEYSTORE_ALIAS = System.getenv(ENV_KS_CLIENT_ALIAS);
+
+
 
   public String signXML(String xmlFile) throws Exception {
 

@@ -5,13 +5,21 @@
     "version": "0.2.0",
     "configurations": [
 
+
         {
             "type": "java",
             "name": "Launch App",
             "request": "launch",
             "mainClass": "com.paycorp.security.App",
             "projectName": "paycorp-security",
-            "args":"-d -v -i ENC.xml -o b.txt"
+            "args":"-d -v -i publish/ENC.xml -o b.txt",
+            "env": {
+                "TWADKEY": "b5ff6db1e2f1d27d294047b220516312da1b4ba899035692e893e16815fc9784",
+                "KS_FILE": "publish/keys/indianbank.jks",
+                "KS_PASS": "serbia",
+                "KS_ALIAS": "54eb870d9ad14386a54e3743ccadd88a",
+                "KS_CLIENT_ALIAS": "TNWBD"
+            }
         },
         {
             "type": "java",
