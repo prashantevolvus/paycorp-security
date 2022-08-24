@@ -12,7 +12,7 @@
             "request": "launch",
             "mainClass": "com.paycorp.security.App",
             "projectName": "paycorp-security",
-            "args":"-d -v -i publish/ENC.xml -o b.txt",
+            "args":"-d -v  -i  publish/oldorg.xml -o bro.txt",
             "env": {
                 "TWADKEY": "b5ff6db1e2f1d27d294047b220516312da1b4ba899035692e893e16815fc9784",
                 "KS_FILE": "publish/keys/indianbank.jks",

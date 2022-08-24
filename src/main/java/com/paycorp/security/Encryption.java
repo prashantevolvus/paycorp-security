@@ -8,7 +8,12 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Encryption {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(Encryption.class);
 
   private static final String ALGORITHM = "AES";
   private static final String TRANSFORMATION = "AES/CBC/PKCS5Padding";
@@ -38,6 +43,7 @@ public class Encryption {
     byte[] arrDecode = Base64.getDecoder().decode(encryptText);
 
     // Though it is Hex PHP is treating it as string and using 32 characters
+    LOGGER.info("Key: " + key);
     SecretKeySpec secretKey = new SecretKeySpec(key.substring(0, 32).getBytes(), "AES");
 
     // Extract IV and encrypted text
